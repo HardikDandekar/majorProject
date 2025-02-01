@@ -32,9 +32,9 @@ const Average = () => {
         </button>
       </div>
 
-      <div className="h-full px-20 py-12 flex mt-20 flex-wrap gap-5">
+      <div className="h-full px-28 py-12 flex mt-20 flex-wrap gap-5">
         {carList.map((c, i) => (
-          <div key={i} className="h-[340px] w-[400px] overflow-hidden bg-slate-400">
+          <div key={i} className="h-[340px] w-[380px] overflow-hidden bg-slate-400">
             <div className="h-[60%]">
               <img className="h-full w-full object-cover" src={c.url} alt="" />
             </div>
