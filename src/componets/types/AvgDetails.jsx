@@ -46,7 +46,7 @@ const AvgDetails = () => {
 
     return (    
         <div className='h-screen w-full bg-zinc-800 flex items-center justify-center'>
-            <div className='h-[90%] w-[80%] bg-gray-100'>
+            <div className='h-[97%] w-[80%] bg-gray-100'>
                 <div className='h-[60%] bg-red-600'>
                     <img className='h-full w-full object-cover' src={c.url} alt={c.name} />
                 </div>

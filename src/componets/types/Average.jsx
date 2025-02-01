@@ -34,7 +34,7 @@ const Average = () => {
 
       <div className="h-full  p-20 flex mt-20 flex-wrap gap-10">
         {carList.map((c, i) => (
-          <div key={i} className="h-[330px] w-[390px] overflow-hidden bg-slate-400">
+          <div key={i} className="h-[350px] w-[360px] overflow-hidden bg-slate-400">
             <div className="h-[60%]">
               <img className="h-full w-full object-cover" src={c.url} alt="" />
             </div>
@@ -43,7 +43,7 @@ const Average = () => {
               <h1 className="text-2xl mb-9 font-bold">{c.name}</h1>
               <Link
                 to={`/Average/${c.id}`}
-                className="px-40 py-3  font-bold rounded bg-zinc-700 text-white hover:text-zinc-900 hover:bg-zinc-200 transition-all duration-300"
+                className="px-36 py-3  font-bold rounded bg-zinc-700 text-white hover:text-zinc-900 hover:bg-zinc-200 transition-all duration-300"
               >
                 Show
               </Link>
