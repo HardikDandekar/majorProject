@@ -15,10 +15,7 @@ const Create = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const savedCars = JSON.parse(localStorage.getItem("addcars")) || [];
-    setCars(savedCars);
-  }, []);
+ 
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -34,7 +31,7 @@ const Create = () => {
 
     const updatedCars = [...cars, carData];
     setCars(updatedCars);
-    localStorage.setItem("addcars", JSON.stringify(updatedCars));
+    localStorage.setItem("addcars", JSON.stringify([...cars, carData]));
 
     dispatch(addCar(carData));
 

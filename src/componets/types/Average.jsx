@@ -11,6 +11,7 @@ const Average = () => {
     const savedCars = JSON.parse(localStorage.getItem("addcars")) || [];
     setCars(savedCars);
   }, [carList]);
+  
 
   return (
     <div className="bg-zinc-700 h-full">
@@ -32,7 +33,7 @@ const Average = () => {
       </div>
 
       <div className="h-full px-20 py-12 flex mt-20 flex-wrap gap-5">
-        {cars.map((c, i) => (
+        {carList.map((c, i) => (
           <div key={i} className="h-[340px] w-[400px] overflow-hidden bg-slate-400">
             <div className="h-[60%]">
               <img className="h-full w-full object-cover" src={c.url} alt="" />

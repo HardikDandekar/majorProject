@@ -7,23 +7,23 @@ const AvgDetails = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const { id } = useParams();
-    const { carList } = useSelector((state) => state.car);
-
+    const carList = useSelector((state) => state.car.carList);
     const [cars, setCars] = useState([]);
 
-    // Load cars from local storage
     useEffect(() => {
-        const savedCars = JSON.parse(localStorage.getItem("addcars")) || [];
-        setCars(savedCars);
-    }, []);
+        const storedCars = JSON.parse(localStorage.getItem("addcars")) || [];
+        setCars(carList.length > 0 ? carList : storedCars);
+    }, [carList]);
 
-    // Find car from local storage
+
+
+   
     const c = cars.find((car) => car.id === id);
 
     if (!c) {
         return (
             <div className="h-screen w-full flex items-center justify-center bg-zinc-800 text-white">
-                <h1 className="text-3xl font-bold">Car not found! 🚗❌</h1>
+                <h1 className="text-3xl font-bold">Car not found! </h1>
                 <button 
                     onClick={() => navigate(-1)} 
                     className="ml-5 px-5 py-2 bg-blue-600 hover:bg-blue-700 transition-all duration-200 text-white"
@@ -34,14 +34,14 @@ const AvgDetails = () => {
         );
     }
 
-    // Delete function
+ 
     const handleDelete = () => {
         const updatedCars = cars.filter(car => car.id !== id);
         setCars(updatedCars);
         localStorage.setItem("addcars", JSON.stringify(updatedCars));
 
-        dispatch(removeCar(id)); // Redux se bhi hata rahe hain
-        navigate(-1); // Peeche jaane ke liye
+        dispatch(removeCar(id)); 
+        navigate(-1); // 
     };
 
     return (    
